@@ -12,6 +12,7 @@
 		AF177DAC1F757CE300388227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF177DAA1F757CE300388227 /* Main.storyboard */; };
 		AF177DAE1F757CE300388227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF177DAD1F757CE300388227 /* Assets.xcassets */; };
 		AF177DB11F757CE300388227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF177DAF1F757CE300388227 /* LaunchScreen.storyboard */; };
+		AF177DB91F757D4100388227 /* MyCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF177DB81F757D4100388227 /* MyCustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		AF177DAD1F757CE300388227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF177DB01F757CE300388227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF177DB21F757CE300388227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF177DB81F757D4100388227 /* MyCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				AF177DA61F757CE300388227 /* AppDelegate.swift */,
 				AF177DA81F757CE300388227 /* ViewController.swift */,
 				AF177DAA1F757CE300388227 /* Main.storyboard */,
+				AF177DB81F757D4100388227 /* MyCustomView.swift */,
 				AF177DAD1F757CE300388227 /* Assets.xcassets */,
 				AF177DAF1F757CE300388227 /* LaunchScreen.storyboard */,
 				AF177DB21F757CE300388227 /* Info.plist */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF177DA91F757CE300388227 /* ViewController.swift in Sources */,
+				AF177DB91F757D4100388227 /* MyCustomView.swift in Sources */,
 				AF177DA71F757CE300388227 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
