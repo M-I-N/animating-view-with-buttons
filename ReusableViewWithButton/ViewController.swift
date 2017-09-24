@@ -9,14 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var menuView: MenuCustomView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let frame = CGRect(x: self.view.frame.width/2 - 100, y: self.view.frame.height/2 - 100, width: 200, height: 200)
+        let frame = CGRect(x: 0.0, y: 20.0, width: self.view.frame.width, height: 200)
         let customView = MyCustomView(frame: frame)
-        customView.layer.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        
+        customView.delegate = self
         self.view.addSubview(customView)
     }
 
@@ -26,5 +28,34 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController: MyCustomViewProtocol {
+    func myCustomView(_ myCustomView: MyCustomView, didTapButton button: UIButton, shouldReturnView menuCustomView: MenuCustomView) {
+        
+        // menu custom view should be recieved here
+        
+        menuView?.removeFromSuperview()
+        menuView = menuCustomView
+        
+        if let menuView = menuView {
+            let heightConstant: CGFloat = 200.0
+            let leadingConstraint = NSLayoutConstraint(item: menuView, attribute: .leading, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .leadingMargin, multiplier: 1.0, constant: 0.0)
+            let trailingConstraint = NSLayoutConstraint(item: menuView, attribute: .trailing, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .trailingMargin, multiplier: 1.0, constant: 0.0)
+            let bottomConstraint = NSLayoutConstraint(item: menuView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: heightConstant)
+            let heightConstraint = NSLayoutConstraint(item: menuView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: heightConstant)
+            
+            menuView.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.view.addSubview(menuView)
+            NSLayoutConstraint.activate([bottomConstraint, leadingConstraint, trailingConstraint, heightConstraint])
+            self.view.layoutIfNeeded()
+            
+            bottomConstraint.constant = 0.0
+            UIView.animate(withDuration: 1) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
 }
 
